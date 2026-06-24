@@ -250,38 +250,6 @@ dots.forEach((dot, i) => {
 });
 startSlider();
 
-/* === NAVBAR SCROLL === */
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-/* === MOBILE MENU === */
-const hamburger = document.getElementById('hamburger');
-const mainNav = document.getElementById('mainNav');
-hamburger.addEventListener('click', () => {
-  const open = mainNav.classList.toggle('open');
-  hamburger.classList.toggle('open', open);
-  hamburger.setAttribute('aria-expanded', open);
-});
-
-/* === SEARCH BAR === */
-const searchToggle = document.getElementById('searchToggle');
-const searchBar = document.getElementById('searchBar');
-const searchClose = document.getElementById('searchClose');
-const searchInput = document.getElementById('searchInput');
-
-searchToggle.addEventListener('click', () => {
-  searchBar.classList.toggle('open');
-  if (searchBar.classList.contains('open')) searchInput.focus();
-});
-searchClose.addEventListener('click', () => searchBar.classList.remove('open'));
-searchInput.addEventListener('input', (e) => {
-  document.getElementById('filterSearch').value = e.target.value;
-  state.search = e.target.value.toLowerCase().trim();
-  renderProducts();
-});
-
 /* === CATEGORY CARDS === */
 document.querySelectorAll('.cat-card').forEach(card => {
   card.addEventListener('click', () => {
@@ -572,12 +540,15 @@ function renderProducts() {
 
   countEl.textContent = `${list.length} producto${list.length !== 1 ? 's' : ''}`;
 
+  console.log(list.length);
   if (list.length === 0) {
     grid.innerHTML = '';
-    noResults.removeAttribute('hidden');
+    noResults.style.display = 'flex';
     return;
   }
-  noResults.setAttribute('hidden', '');
+  else {
+    noResults.style.display = 'none';
+  }
 
   const catNames = { oficina: 'Oficina', interior: 'Interior', exterior: 'Exterior', gamer: 'Gamer', industrial: 'Industriales', bancas: 'Bancas' };
   const badgeLabels = { new: 'Nuevo', premium: 'Premium', sale: 'Oferta' };
@@ -712,34 +683,6 @@ function closeModal() {
 document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('modalOverlay').addEventListener('click', (e) => {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeModal();
-    closeSidebarFn();
-    searchBar.classList.remove('open');
-  }
-});
-
-/* === CONTACT FORM === */
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const success = document.getElementById('formSuccess');
-  // Simulate sending
-  const btn = form.querySelector('[type="submit"]');
-  btn.textContent = 'Enviando...';
-  btn.disabled = true;
-  setTimeout(() => {
-    form.reset();
-    success.removeAttribute('hidden');
-    btn.innerHTML = `
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-      </svg> Enviar Mensaje`;
-    btn.disabled = false;
-    setTimeout(() => success.setAttribute('hidden', ''), 5000);
-  }, 1200);
 });
 
 /* === FOOTER CATEGORY LINKS === */

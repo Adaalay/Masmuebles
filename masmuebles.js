@@ -842,6 +842,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Reset form
                 contactForm.reset();
             }, 1500);
+        })    
     }
 
     /* ==========================================================================
