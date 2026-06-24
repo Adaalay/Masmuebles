@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAAS Muebles – Venta en línea de sillas para oficina, interiores y exteriores</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="masmuebles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="contact-info">
+                    <span><i class="fas fa-map-marker-alt"></i> Río Poo #1090, Guadalajara, Jalisco</span>
+                    <span><i class="fas fa-phone-alt"></i> (33) 1203-2780</span>
+                    <span><i class="fas fa-envelope"></i> <a href="mailto:maasmueblesgdl@gmail.com">maasmueblesgdl@gmail.com</a></span>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <a href="#" id="account-btn"><i class="fas fa-user"></i> Mi Cuenta</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="#" class="logo" aria-label="MAAS Muebles Inicio">
+                <span class="logo-text">MAAS<span class="accent-text">Muebles</span></span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav" id="main-nav" aria-label="Menú principal">
+                <ul>
+                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="catalogo.html" class="nav-link">Productos</a></li>
+                    <li><a href="productos.html?cat=premium" class="nav-link">Premium</a></li>
+                    <li><a href="#contacto" class="nav-link">Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Navigation Controls -->
+            <div class="header-controls">
+                <button class="control-btn" id="search-trigger" aria-label="Buscar productos">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="control-btn" id="cart-trigger" aria-label="Ver carrito">
+                    <span class="cart-subtotal" id="cart-subtotal">$0.00 MXN</span>
+                    <div class="cart-icon-wrapper">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                </button>
+                <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Hero Carousel Section -->
+        <section class="hero-slider" aria-label="Banners promocionales">
+            <div class="slider-wrapper">
+                <!-- Slide 1 -->
+                <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagenes/oficina.png');">
+                    <div class="container slide-content">
+                        <h2 class="slide-subtitle">Sillas Ergonómicas</h2>
+                        <h1 class="slide-title">LÍNEA OFICINA</h1>
+                        <p class="slide-text">Máximo confort y diseño premium para tu espacio de trabajo diario.</p>
+                        <a href="#productos" class="btn btn-primary">VER PRODUCTOS</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagenes/interior.png');">
+                    <div class="container slide-content">
+                        <h2 class="slide-subtitle">Estilo & Diseño</h2>
+                        <h1 class="slide-title">LÍNEA CONTRACT</h1>
+                        <p class="slide-text">Sillas de diseño y bancos elegantes para comedores, cafeterías y restaurantes.</p>
+                        <a href="#productos" class="btn btn-primary">VER PRODUCTOS</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Controls -->
+            <button class="slider-arrow prev" id="slider-prev" aria-label="Anterior diapositiva"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-arrow next" id="slider-next" aria-label="Siguiente diapositiva"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots" id="slider-dots"></div>
+        </section>
+
+        <!-- Trust Features Bar -->
+        <section class="features-bar">
+            <div class="container features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="feature-info">
+                        <h3>Pagos Seguros</h3>
+                        <p>Aceptamos todas las tarjetas a través de Mercado Pago</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <div class="feature-info">
+                        <h3>Envío Gratis</h3>
+                        <p>En compras mayores de $5,000.00 MXN</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-industry"></i></div>
+                    <div class="feature-info">
+                        <h3>Fabricantes</h3>
+                        <p>Productos de exportación, 100% mexicanos</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <div class="feature-info">
+                        <h3>Contáctanos</h3>
+                        <p>L-V: 9am-2pm / 3pm-6pm. Sáb: 9am-2pm</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">Categorías</h2>
+                <div class="categories-grid">
+                    <!-- Cat 1 -->
+                    <a href="#productos" class="category-card" data-category="oficina" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('imagenes/oficina.png');">
+                        <div class="category-content">
+                            <h3>Oficina</h3>
+                        </div>
+                    </a>
+                    <!-- Cat 2 -->
+                    <a href="#productos" class="category-card" data-category="interior" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('imagenes/interior.png');">
+                        <div class="category-content">
+                            <h3>Interior</h3>
+                        </div>
+                    </a>
+                    <!-- Cat 3 -->
+                    <a href="#productos" class="category-card" data-category="exterior" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('imagenes/exterior.png');">
+                        <div class="category-content">
+                            <h3>Exterior</h3>
+                        </div>
+                    </a>
+                    <!-- Cat 4 -->
+                    <a href="#productos" class="category-card" data-category="gamer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('imagenes/gamer.png');">
+                        <div class="category-content">
+                            <h3>Gamer</h3>
+                        </div>
+                    </a>
+                    <!-- Cat 5 -->
+                    <a href="#productos" class="category-card" data-category="industriales" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('imagenes/oficina.png');">
+                        <div class="category-content">
+                            <h3>Industriales</h3>
+                        </div>
+                    </a>
+                    <!-- Cat 6 -->
+                    <a href="#productos" class="category-card" data-category="bancas" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('imagenes/interior.png');">
+                        <div class="category-content">
+                            <h3>Bancas</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section" id="productos">
+            <div class="container">
+                <h2 class="section-title">Nuestros Productos</h2>
+                
+                <!-- Filter Tabs -->
+                <div class="product-filters">
+                    <button class="filter-tab active" data-filter="all">Todos</button>
+                    <button class="filter-tab" data-filter="oficina">Oficina</button>
+                    <button class="filter-tab" data-filter="interior">Interior</button>
+                    <button class="filter-tab" data-filter="gamer">Gamer</button>
+                    <button class="filter-tab" data-filter="premium">Premium</button>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="products-grid" id="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card" data-category="oficina premium" data-id="1" data-name="Paoli Ejecutivo" data-price="6999" data-img="imagenes/oficina.png">
+                        <span class="badge badge-premium">Premium</span>
+                        <div class="product-image-wrapper">
+                            <img src="imagenes/oficina.png" alt="Paoli Ejecutivo" class="product-img">
+                            <div class="product-actions">
+                                <button class="action-btn quick-view-btn" aria-label="Vista rápida"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn add-to-cart-btn" aria-label="Añadir al carrito"><i class="fas fa-shopping-basket"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Paoli Ejecutivo</h3>
+                            <div class="swatches">
+                                <span class="swatch color-black active" data-color="Negro" title="Negro"></span>
+                                <span class="swatch color-gray" data-color="Gris" title="Gris"></span>
+                                <span class="swatch color-red" data-color="Rojo" title="Rojo"></span>
+                            </div>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">$6,999.00 <span class="currency">MXN</span></span>
+                            </div>
+                            <button class="btn btn-outline btn-sm buy-now">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card" data-category="oficina premium" data-id="2" data-name="Paoli Visitante" data-price="4999" data-img="imagenes/oficina.png">
+                        <span class="badge badge-premium">Premium</span>
+                        <div class="product-image-wrapper">
+                            <img src="imagenes/oficina.png" alt="Paoli Visitante" class="product-img" style="filter: hue-rotate(15deg);">
+                            <div class="product-actions">
+                                <button class="action-btn quick-view-btn" aria-label="Vista rápida"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn add-to-cart-btn" aria-label="Añadir al carrito"><i class="fas fa-shopping-basket"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Paoli Visitante</h3>
+                            <div class="swatches">
+                                <span class="swatch color-black active" data-color="Negro" title="Negro"></span>
+                                <span class="swatch color-gray" data-color="Gris" title="Gris"></span>
+                            </div>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">$4,999.00 <span class="currency">MXN</span></span>
+                            </div>
+                            <button class="btn btn-outline btn-sm buy-now">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card" data-category="oficina" data-id="3" data-name="Alufsen Ejecutivo" data-price="7999" data-img="imagenes/oficina.png">
+                        <div class="product-image-wrapper">
+                            <img src="imagenes/oficina.png" alt="Alufsen Ejecutivo" class="product-img" style="filter: brightness(0.9) contrast(1.1);">
+                            <div class="product-actions">
+                                <button class="action-btn quick-view-btn" aria-label="Vista rápida"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn add-to-cart-btn" aria-label="Añadir al carrito"><i class="fas fa-shopping-basket"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Alufsen Ejecutivo</h3>
+                            <div class="swatches">
+                                <span class="swatch color-black active" data-color="Negro" title="Negro"></span>
+                                <span class="swatch color-blue" data-color="Azul" title="Azul"></span>
+                            </div>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">$7,999.00 <span class="currency">MXN</span></span>
+                            </div>
+                            <button class="btn btn-outline btn-sm buy-now">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card" data-category="oficina" data-id="4" data-name="Alufsen Visitante" data-price="5399" data-img="imagenes/oficina.png">
+                        <div class="product-image-wrapper">
+                            <img src="imagenes/oficina.png" alt="Alufsen Visitante" class="product-img" style="filter: hue-rotate(200deg);">
+                            <div class="product-actions">
+                                <button class="action-btn quick-view-btn" aria-label="Vista rápida"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn add-to-cart-btn" aria-label="Añadir al carrito"><i class="fas fa-shopping-basket"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Alufsen Visitante</h3>
+                            <div class="swatches">
+                                <span class="swatch color-black active" data-color="Negro" title="Negro"></span>
+                                <span class="swatch color-white" data-color="Blanco" title="Blanco"></span>
+                            </div>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">$5,399.00 <span class="currency">MXN</span></span>
+                            </div>
+                            <button class="btn btn-outline btn-sm buy-now">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card" data-category="interior" data-id="5" data-name="Silla Contract Nord" data-price="2490" data-img="imagenes/interior.png">
+                        <div class="product-image-wrapper">
+                            <img src="imagenes/interior.png" alt="Silla Contract Nord" class="product-img">
+                            <div class="product-actions">
+                                <button class="action-btn quick-view-btn" aria-label="Vista rápida"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn add-to-cart-btn" aria-label="Añadir al carrito"><i class="fas fa-shopping-basket"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Silla Contract Nord</h3>
+                            <div class="swatches">
+                                <span class="swatch color-wood active" data-color="Madera" title="Madera"></span>
+                                <span class="swatch color-white" data-color="Blanco" title="Blanco"></span>
+                            </div>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">$2,490.00 <span class="currency">MXN</span></span>
+                            </div>
+                            <button class="btn btn-outline btn-sm buy-now">Agregar al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card" data-category="gamer" data-id="6" data-name="Silla Gamer Orion" data-price="4790" data-img="imagenes/gamer.png">
+                        <span class="badge badge-sale">Oferta</span>
+                        <div class="product-image-wrapper">
+                            <img src="imagenes/gamer.png" alt="Silla Gamer Orion" class="product-img">
+                            <div class="product-actions">
+                                <button class="action-btn quick-view-btn" aria-label="Vista rápida"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn add-to-cart-btn" aria-label="Añadir al carrito"><i class="fas fa-shopping-basket"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Silla Gamer Orion</h3>
+                            <div class="swatches">
+                                <span class="swatch color-red active" data-color="Rojo/Negro" title="Rojo/Negro"></span>
+                                <span class="swatch color-blue" data-color="Azul/Negro" title="Azul/Negro"></span>
+                            </div>
+                            <div class="product-price-wrapper">
+                                <span class="product-price">$4,790.00 <span class="currency">MXN</span></span>
+                            </div>
+                            <button class="btn btn-outline btn-sm buy-now">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Highlight Banner -->
+        <section class="premium-highlight-section">
+            <div class="container premium-highlight-content">
+                <div class="premium-badge">EXCLUSIVO</div>
+                <h2>LÍNEA <span class="red-text">PREMIUM</span> MAAS</h2>
+                <p>Nuestra colección insignia fabricada con materiales seleccionados de la más alta resistencia, piel genuina e ingeniería ergonómica avanzada.</p>
+                <a href="#productos" class="btn btn-primary btn-large filter-premium-trigger">EXPLORAR LÍNEA</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contacto">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Form Area -->
+                    <div class="contact-form-wrapper">
+                        <h2>Contáctanos</h2>
+                        <p>Déjanos un mensaje y un asesor se pondrá en contacto contigo a la brevedad.</p>
+                        
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name" class="sr-only">Nombre Completo</label>
+                                <input type="text" id="contact-name" placeholder="Nombre completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-whatsapp" class="sr-only">WhatsApp / Teléfono</label>
+                                <input type="tel" id="contact-whatsapp" placeholder="WhatsApp" pattern="[0-9]{10}" title="Por favor ingresa un número de 10 dígitos">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email" class="sr-only">Correo Electrónico</label>
+                                <input type="email" id="contact-email" placeholder="Correo electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message" class="sr-only">Mensaje</label>
+                                <textarea id="contact-message" placeholder="¿En qué te podemos ayudar?" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+                        </form>
+                        <div class="form-feedback" id="form-feedback"></div>
+                    </div>
+
+                    <!-- Map/Hours Area -->
+                    <div class="contact-details-wrapper">
+                        <div class="details-card">
+                            <h3>Nuestra Ubicación</h3>
+                            <p><i class="fas fa-map-marked-alt"></i> Río Poo #1090, Sector Reforma, Guadalajara, Jalisco, México.</p>
+                            
+                            <h3>Horario de Atención</h3>
+                            <ul class="hours-list">
+                                <li><span>Lunes a Viernes</span> <span>9:00 AM – 2:00 PM / 3:00 PM – 6:00 PM</span></li>
+                                <li><span>Sábados</span> <span>9:00 AM – 2:00 PM</span></li>
+                                <li><span>Domingos</span> <span>Cerrado</span></li>
+                            </ul>
+                        </div>
+                        <!-- Embedded map placeholder with stylish design -->
+                        <div class="map-placeholder">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.3242095908097!2d-103.3551528!3d20.6563889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b23c10646197%3A0xe54d7d8e6a57c5a0!2zU8O6cGVyIEF1dG9zIFLDrW8gUG9v!5e0!3m2!1ses!2smx!4v1680000000000!5m2!1ses!2smx" 
+                                width="100%" 
+                                height="250" 
+                                style="border:0; border-radius: 8px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <!-- Col 1 -->
+            <div class="footer-col brand-col">
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-text">MAAS<span class="accent-text">Muebles</span></span>
+                </a>
+                <p class="brand-desc">Especialistas en el diseño y distribución de sillería de alta calidad. Sillas de oficina ergonómicas, contract, interior, exterior y gama industrial con el mejor soporte lumbar y confort del mercado mexicano.</p>
+                <div class="social-links footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Col 2 -->
+            <div class="footer-col">
+                <h3>Más Información</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            <!-- Col 3 -->
+            <div class="footer-col">
+                <h3>Categorías</h3>
+                <ul class="footer-links">
+                    <li><a href="#productos" class="footer-cat-link" data-cat="oficina">Sillas de Oficina</a></li>
+                    <li><a href="#productos" class="footer-cat-link" data-cat="interior">Línea Interior</a></li>
+                    <li><a href="#productos" class="footer-cat-link" data-cat="exterior">Sillas de Exterior</a></li>
+                    <li><a href="#productos" class="footer-cat-link" data-cat="gamer">Sillas Gamer</a></li>
+                    <li><a href="#productos" class="footer-cat-link" data-cat="industriales">Sillas Industriales</a></li>
+                </ul>
+            </div>
+            <!-- Col 4 -->
+            <div class="footer-col contact-col">
+                <h3>Contáctanos</h3>
+                <ul class="footer-contact-list">
+                    <li><i class="fas fa-map-pin"></i> Río Poo #1090, GDL, Jalisco</li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:maasmueblesgdl@gmail.com">maasmueblesgdl@gmail.com</a></li>
+                    <li><i class="fas fa-phone-alt"></i> (33) 1203-2780</li>
+                </ul>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <span class="mercado-pago-badge">Mercado Pago</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 – Derechos reservados maasmuebles</p>
+                <p>Diseño web premium y funcionalidad interactiva</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer (Slide-out panel) -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-overlay" id="cart-overlay"></div>
+        <div class="cart-drawer-content">
+            <div class="cart-drawer-header">
+                <h3>Tu Carrito</h3>
+                <button class="close-drawer" id="cart-close" aria-label="Cerrar carrito"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-drawer-body" id="cart-items-container">
+                <!-- Dynamic cart items will be loaded here by JavaScript -->
+                <div class="empty-cart-msg">
+                    <i class="fas fa-shopping-basket"></i>
+                    <p>Tu carrito está vacío.</p>
+                    <a href="#productos" class="btn btn-primary btn-sm close-drawer-action">Explorar catálogo</a>
+                </div>
+            </div>
+            <div class="cart-drawer-footer">
+                <div class="cart-summary-row">
+                    <span>Subtotal:</span>
+                    <span class="cart-drawer-subtotal" id="cart-drawer-subtotal">$0.00 MXN</span>
+                </div>
+                <p class="shipping-notice">Gastos de envío e impuestos calculados al finalizar la compra.</p>
+                <div class="cart-actions">
+                    <button class="btn btn-outline btn-block" id="clear-cart-btn">Vaciar Carrito</button>
+                    <button class="btn btn-primary btn-block checkout-btn" id="checkout-btn">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Modal Overlay -->
+    <div class="search-modal" id="search-modal">
+        <button class="close-search" id="search-close" aria-label="Cerrar buscador"><i class="fas fa-times"></i></button>
+        <div class="search-modal-content">
+            <h2>Buscar Productos</h2>
+            <form class="search-form" id="search-modal-form">
+                <input type="search" id="search-input" placeholder="Escribe el nombre de la silla..." autofocus>
+                <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="search-results" id="search-results-container">
+                <!-- Search results will show here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quick-view-modal">
+        <div class="quick-view-overlay" id="quick-view-close-overlay"></div>
+        <div class="quick-view-content">
+            <button class="close-quick-view" id="quick-view-close" aria-label="Cerrar vista rápida"><i class="fas fa-times"></i></button>
+            <div class="quick-view-body" id="quick-view-body">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/523311367260" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chatear por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda? ¡Escríbenos!</span>
+    </a>
+
+    <!-- Custom JavaScript -->
+    <script src="masmuebles.js" defer></script>
+</body>
+</html>
