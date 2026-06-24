@@ -2084,6 +2084,9 @@ section {
 }
 
 @media (max-width: 768px) {
+    .view-toggle {
+        display: none;
+    }
     /* Mobile Navigation menu toggle */
     .mobile-menu-toggle {
         display: block;
