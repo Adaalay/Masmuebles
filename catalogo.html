@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MAAS Muebles — Venta en línea de sillas para oficina, interiores y exteriores. Fabricantes mexicanos, productos de exportación." />
+  <title>MAAS Muebles — Catálogo de Sillas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="masmuebles.css">
+</head>
+<body>
+<div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="contact-info">
+                    <span><i class="fas fa-map-marker-alt"></i> Río Poo #1090, Guadalajara, Jalisco</span>
+                    <span><i class="fas fa-phone-alt"></i> (33) 1203-2780</span>
+                    <span><i class="fas fa-envelope"></i> <a href="mailto:maasmueblesgdl@gmail.com">maasmueblesgdl@gmail.com</a></span>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <a href="#" id="account-btn"><i class="fas fa-user"></i> Mi Cuenta</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="#" class="logo" aria-label="MAAS Muebles Inicio">
+                <span class="logo-text">MAAS<span class="accent-text">Muebles</span></span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav" id="main-nav" aria-label="Menú principal">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="catalogo.html" class="nav-link active">Productos</a></li>
+                    <li><a href="productos.html?cat=premium" class="nav-link">Premium</a></li>
+                    <li><a href="#contacto" class="nav-link">Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Navigation Controls -->
+            <div class="header-controls">
+                <button class="control-btn" id="search-trigger" aria-label="Buscar productos">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="control-btn" id="cart-trigger" aria-label="Ver carrito">
+                    <span class="cart-subtotal" id="cart-subtotal">$0.00 MXN</span>
+                    <div class="cart-icon-wrapper">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                </button>
+                <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+  <!-- HERO SLIDER -->
+  <section class="hero" id="hero" aria-label="Presentación">
+    <div class="hero__slides" id="heroSlides">
+      <div class="hero__slide active" style="background-image: url('images/hero-oficina.png')">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <span class="hero__tag">Línea Corporativa</span>
+          <h1 class="hero__title">Oficina</h1>
+          <p class="hero__sub">Ergonomía y confort para tu espacio de trabajo</p>
+          <a href="#catalogo" class="btn-primary">Ver Productos</a>
+        </div>
+      </div>
+      <div class="hero__slide" style="background-image: url('images/hero-premium.png')">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <span class="hero__tag">Exclusivo</span>
+          <h1 class="hero__title">Premium</h1>
+          <p class="hero__sub">Diseño de exportación, 100% mexicano</p>
+          <a href="#catalogo" class="btn-primary">Explorar Línea</a>
+        </div>
+      </div>
+    </div>
+    <button class="hero__btn prev" id="heroPrev" aria-label="Diapositiva anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+    </button>
+    <button class="hero__btn next" id="heroNext" aria-label="Diapositiva siguiente">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
+    </button>
+    <div class="hero__dots" id="heroDots">
+      <button class="hero__dot active" aria-label="Ir a diapositiva 1"></button>
+      <button class="hero__dot" aria-label="Ir a diapositiva 2"></button>
+    </div>
+  </section>
+
+  <!-- FEATURES STRIP -->
+  <section class="features" aria-label="Beneficios">
+    <div class="container features__grid">
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h3>Pagos Seguros</h3>
+        <p>Todas las tarjetas vía Mercado Pago</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>Envío Gratis</h3>
+        <p>En compras mayores de $5,000 MXN</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Fabricantes</h3>
+        <p>Productos de exportación, 100% mexicanos</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>Contáctanos</h3>
+        <p>L-V 9am–6pm · Sáb 9am–2pm</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="categorias" aria-labelledby="catTitle">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" id="catTitle">Categorías</h2>
+        <p class="section-sub">Encuentra el mueble perfecto para tu espacio</p>
+      </div>
+      <div class="categories__grid">
+        <button class="cat-card active" data-cat="todos" aria-pressed="true">
+          <div class="cat-card__img-wrap">
+            <img src="images/silla-ejecutiva.png" alt="Todos los productos" loading="lazy" />
+          </div>
+          <span>Todos</span>
+        </button>
+        <button class="cat-card" data-cat="oficina" aria-pressed="false">
+          <div class="cat-card__img-wrap">
+            <img src="images/silla-ejecutiva.png" alt="Sillas de oficina" loading="lazy" />
+          </div>
+          <span>Oficina</span>
+        </button>
+        <button class="cat-card" data-cat="interior" aria-pressed="false">
+          <div class="cat-card__img-wrap">
+            <img src="images/silla-interior.png" alt="Sillas de interior" loading="lazy" />
+          </div>
+          <span>Interior</span>
+        </button>
+        <button class="cat-card" data-cat="exterior" aria-pressed="false">
+          <div class="cat-card__img-wrap">
+            <img src="images/silla-exterior.png" alt="Sillas de exterior" loading="lazy" />
+          </div>
+          <span>Exterior</span>
+        </button>
+        <button class="cat-card" data-cat="gamer" aria-pressed="false">
+          <div class="cat-card__img-wrap">
+            <img src="images/silla-gamer.png" alt="Sillas gamer" loading="lazy" />
+          </div>
+          <span>Gamer</span>
+        </button>
+        <button class="cat-card" data-cat="industrial" aria-pressed="false">
+          <div class="cat-card__img-wrap">
+            <img src="images/silla-industrial.png" alt="Muebles industriales" loading="lazy" />
+          </div>
+          <span>Industriales</span>
+        </button>
+        <button class="cat-card" data-cat="bancas" aria-pressed="false">
+          <div class="cat-card__img-wrap">
+            <img src="images/banca.png" alt="Bancas" loading="lazy" />
+          </div>
+          <span>Bancas</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section class="catalog-section" id="catalogo" aria-labelledby="catlogTitle">
+    <div class="container catalog-layout">
+
+      <!-- SIDEBAR FILTERS -->
+      <aside class="sidebar" id="sidebar" aria-label="Filtros">
+        <div class="sidebar__header">
+          <h2 class="sidebar__title">Filtros</h2>
+          <button class="sidebar__clear" id="clearFilters" aria-label="Limpiar filtros">Limpiar todo</button>
+        </div>
+
+        <!-- Search filter -->
+        <div class="filter-group">
+          <h3 class="filter-group__title">Buscar</h3>
+          <div class="filter-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="search" id="filterSearch" placeholder="Nombre del producto..." class="filter-input" aria-label="Filtrar por nombre" />
+          </div>
+        </div>
+
+        <!-- Category filter -->
+        <div class="filter-group">
+          <h3 class="filter-group__title">Categoría</h3>
+          <div class="filter-options" role="group" aria-label="Filtrar por categoría">
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="todos" checked /> <span>Todos</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="oficina" /> <span>Oficina</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="interior" /> <span>Interior</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="exterior" /> <span>Exterior</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="gamer" /> <span>Gamer</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="industrial" /> <span>Industriales</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="cat" value="bancas" /> <span>Bancas</span></label>
+          </div>
+        </div>
+
+        <!-- Price filter -->
+        <div class="filter-group">
+          <h3 class="filter-group__title">Precio</h3>
+          <div class="price-display">
+            <span id="priceMin">$0</span> — <span id="priceMax">$25,000</span>
+          </div>
+          <div class="range-wrap">
+            <input type="range" id="rangeMin" min="0" max="25000" value="0" step="500" class="range-slider" aria-label="Precio mínimo" />
+            <input type="range" id="rangeMax" min="0" max="25000" value="25000" step="500" class="range-slider" aria-label="Precio máximo" />
+          </div>
+          <div class="price-labels">
+            <span>$0</span><span>$25,000</span>
+          </div>
+        </div>
+
+        <!-- Material filter -->
+        <div class="filter-group">
+          <h3 class="filter-group__title">Material</h3>
+          <div class="filter-options" role="group" aria-label="Filtrar por material">
+            <label class="filter-checkbox"><input type="checkbox" name="mat" value="tela" /> <span>Tela</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="mat" value="piel" /> <span>Piel Sintética</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="mat" value="malla" /> <span>Malla Ergonómica</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="mat" value="plastico" /> <span>Plástico</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="mat" value="madera" /> <span>Madera</span></label>
+            <label class="filter-checkbox"><input type="checkbox" name="mat" value="metal" /> <span>Metal</span></label>
+          </div>
+        </div>
+
+        <!-- Color filter -->
+        <div class="filter-group">
+          <h3 class="filter-group__title">Color</h3>
+          <div class="color-options" role="group" aria-label="Filtrar por color">
+            <button class="color-swatch active" data-color="todos" style="background: linear-gradient(135deg,#000 50%,#fff 50%)" aria-label="Todos los colores" title="Todos"></button>
+            <button class="color-swatch" data-color="negro" style="background:#1a1a1a" aria-label="Negro" title="Negro"></button>
+            <button class="color-swatch" data-color="cafe" style="background:#8B4513" aria-label="Café" title="Café"></button>
+            <button class="color-swatch" data-color="gris" style="background:#808080" aria-label="Gris" title="Gris"></button>
+            <button class="color-swatch" data-color="azul" style="background:#1a3a6b" aria-label="Azul" title="Azul"></button>
+            <button class="color-swatch" data-color="naranja" style="background:#e85d04" aria-label="Naranja" title="Naranja"></button>
+            <button class="color-swatch" data-color="blanco" style="background:#f5f5f5;border:1px solid #ccc" aria-label="Blanco" title="Blanco"></button>
+          </div>
+        </div>
+
+        <!-- Sort filter -->
+        <div class="filter-group">
+          <h3 class="filter-group__title">Ordenar por</h3>
+          <select class="filter-select" id="sortSelect" aria-label="Ordenar productos">
+            <option value="default">Más recientes</option>
+            <option value="price-asc">Precio: Menor a Mayor</option>
+            <option value="price-desc">Precio: Mayor a Menor</option>
+            <option value="name-asc">Nombre A–Z</option>
+            <option value="name-desc">Nombre Z–A</option>
+          </select>
+        </div>
+
+        <!-- Mobile close -->
+        <button class="sidebar__close-mobile" id="closeSidebar" aria-label="Cerrar filtros">✕ Cerrar</button>
+      </aside>
+
+      <!-- MAIN CATALOG -->
+      <main class="catalog-main" aria-label="Catálogo de productos">
+        <div class="catalog-toolbar">
+          <div class="catalog-toolbar__left">
+            <h2 class="catalog-title" id="catlogTitle">Catálogo</h2>
+            <span class="catalog-count" id="catalogCount">0 productos</span>
+          </div>
+          <div class="catalog-toolbar__right">
+            <button class="filter-toggle" id="filterToggle" aria-label="Abrir filtros">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+              Filtros
+            </button>
+            <div class="view-toggle">
+              <button class="view-btn active" id="gridView" aria-label="Vista cuadrícula" aria-pressed="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              </button>
+              <button class="view-btn" id="listView" aria-label="Vista lista" aria-pressed="false">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Filters Tags -->
+        <div class="active-filters" id="activeFilters" aria-live="polite"></div>
+
+        <!-- Product grid -->
+        <div class="products-grid" id="productsGrid" aria-label="Productos">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- No results -->
+        <div class="no-results" id="noResults" hidden aria-live="polite">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          <h3>Sin resultados</h3>
+          <p>Intenta con otros filtros o busca otro producto.</p>
+          <button class="btn-primary" onclick="resetAllFilters()">Limpiar filtros</button>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="about" id="nosotros" aria-labelledby="aboutTitle">
+    <div class="container about__grid">
+      <div class="about__text">
+        <span class="section-tag">Quiénes Somos</span>
+        <h2 class="section-title" id="aboutTitle">Fabricantes mexicanos con visión global</h2>
+        <p>En MAAS Muebles fabricamos productos de alta calidad con estándares de exportación. Llevamos más de 15 años equipando oficinas, espacios industriales y hogares con diseño funcional y duradero.</p>
+        <ul class="about__list">
+          <li><span class="check">✓</span> Más de 200 modelos disponibles</li>
+          <li><span class="check">✓</span> Garantía de 1 año en todos los productos</li>
+          <li><span class="check">✓</span> Envíos a toda la República Mexicana</li>
+          <li><span class="check">✓</span> Atención personalizada y cotizaciones por volumen</li>
+        </ul>
+        <a href="#contacto" class="btn-primary">Contáctanos</a>
+      </div>
+      <div class="about__visual">
+        <div class="about__img-wrap">
+          <img src="images/hero-premium.png" alt="Oficina equipada con muebles MAAS" loading="lazy" />
+        </div>
+        <div class="about__badge">
+          <strong>+15</strong>
+          <span>años de experiencia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contacto" aria-labelledby="contactTitle">
+    <div class="container contact__grid">
+      <div class="contact__info">
+        <span class="section-tag light">Contáctanos</span>
+        <h2 class="section-title light" id="contactTitle">¿Necesitas más información?</h2>
+        <p class="contact__info-text">Estamos aquí para ayudarte a encontrar el mueble perfecto para tu espacio.</p>
+        <div class="contact__details">
+          <div class="contact__detail">
+            <div class="contact__detail-icon">📍</div>
+            <span>Río Poo #1090, Guadalajara, Jalisco</span>
+          </div>
+          <div class="contact__detail">
+            <div class="contact__detail-icon">📞</div>
+            <a href="tel:+523312032780">(33) 1203-2780</a>
+          </div>
+          <div class="contact__detail">
+            <div class="contact__detail-icon">✉</div>
+            <a href="mailto:maasmueblesgdl@gmail.com">maasmueblesgdl@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact__hours">
+          <strong>Horario:</strong>
+          <span>Lun–Vie: 9am–2pm · 3pm–6pm</span>
+          <span>Sábados: 9am–2pm</span>
+        </div>
+      </div>
+      <div class="contact__form-wrap">
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">Nombre</label>
+              <input type="text" id="fname" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="fphone">WhatsApp</label>
+              <input type="tel" id="fphone" name="whatsapp" placeholder="+52 33 0000-0000" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="femail">Correo Electrónico</label>
+            <input type="email" id="femail" name="email" placeholder="correo@ejemplo.com" required autocomplete="email" />
+          </div>
+          <div class="form-field">
+            <label for="fmessage">Mensaje</label>
+            <textarea id="fmessage" name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Enviar Mensaje
+          </button>
+          <p class="form-success" id="formSuccess" hidden>¡Mensaje enviado! Nos pondremos en contacto contigo pronto.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="navbar__logo footer-logo">
+          <span class="logo-icon">M</span><span class="logo-text">aas<span class="logo-dot">.</span></span>
+        </a>
+        <p>Fabricantes mexicanos de muebles de exportación.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Más Información</h4>
+        <ul>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Categorías</h4>
+        <ul>
+          <li><a href="#" onclick="filterByCategory('oficina')">Oficina</a></li>
+          <li><a href="#" onclick="filterByCategory('interior')">Interior</a></li>
+          <li><a href="#" onclick="filterByCategory('gamer')">Gamer</a></li>
+          <li><a href="#" onclick="filterByCategory('industrial')">Industriales</a></li>
+          <li><a href="#" onclick="filterByCategory('bancas')">Bancas</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contáctanos</h4>
+        <ul>
+          <li>📍 Río Poo #1090, GDL, Jalisco</li>
+          <li><a href="mailto:maasmueblesgdl@gmail.com">✉ maasmueblesgdl@gmail.com</a></li>
+          <li><a href="tel:+523312032780">📞 (33) 1203-2780</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>©2025 – Derechos reservados MAAS Muebles</p>
+      <div class="footer__payments" aria-label="Métodos de pago">
+        <span>Mercado Pago</span>
+        <span>VISA</span>
+        <span>Mastercard</span>
+        <span>BBVA</span>
+        <span>Efectivo</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PRODUCT QUICK VIEW MODAL -->
+  <div class="modal-overlay" id="modalOverlay" hidden aria-modal="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Cerrar">✕</button>
+      <div class="modal__content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- CART TOAST -->
+  <div class="toast" id="cartToast" role="status" aria-live="polite">
+    Producto agregado al carrito
+  </div>
+
+  <!-- MOBILE FILTER OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay" hidden aria-hidden="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
